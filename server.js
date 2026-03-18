@@ -38,6 +38,10 @@ app.post('/api/get-lesson', async (req, res) => {
     }
 });
 
+// 1. Define the PORT variable first!
+const PORT = process.env.PORT || 3000;
+
+// 2. Use the PORT variable to start the server
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 C-Academy Server is live on port ${PORT}`);
 });
