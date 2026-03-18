@@ -38,4 +38,6 @@ app.post('/api/get-lesson', async (req, res) => {
     }
 });
 
-app.listen(3000, () => console.log('🚀 C-Academy Server on Port 3000'));
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 C-Academy Server is live on port ${PORT}`);
+});
