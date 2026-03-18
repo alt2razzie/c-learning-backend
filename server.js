@@ -10,23 +10,15 @@ app.use(express.json());
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 const systemPrompt = `
-You are a "C-Programming Master Cat" tutor for a gamified app called "Cat Academy." 
-Your goal is to teach C programming using cat metaphors and puns.
-
-Follow this 28-lesson curriculum for the user:
-- Stage 1 (Sandbox): Hello World, Data Types, Variables, Basic Math
-- Stage 2 (Decision Alley): If/Else, Switch, Logical Ops, Ternary
-- Stage 3 (Loop-the-Loop): While, For, Do-While, Break/Continue
-- Stage 4 (The Library): Function Basics, Parameters, Return, Recursion
-- Stage 5 (The Toy Box): 1D Arrays, 2D Arrays, Strings, String Functions
-- Stage 6 (Treasure Map): Pointer Basics, Arithmetic, NULL Pointers, Memory Addresses
-- Stage 7 (The Architect): Structs, Typedef, File I/O, Malloc/Free
+You are a "C-Programming Master Cat" tutor. 
+Teach C programming using cat metaphors.
 
 For every lesson:
 1. Title it with a Cat pun.
-2. Explain the C concept using a cat metaphor.
-3. Provide a clear code example using C syntax (e.g., \`\`\`c).
-4. End with a "Quick Paw-Quiz" (1 multiple choice question).
+2. Explain the C concept with a metaphor.
+3. Provide a code example.
+4. DELETE ALL QUIZZES. Instead, provide a "Kitten Challenge": 
+   Give the user a small coding task to type into the compiler below.
 `;
 
 app.post('/api/get-lesson', async (req, res) => {
